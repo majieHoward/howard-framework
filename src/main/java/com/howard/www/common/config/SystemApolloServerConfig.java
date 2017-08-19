@@ -10,16 +10,16 @@ import com.howard.www.common.message.apollo.client.HowardApolloServerClient;
 import com.howard.www.common.message.apollo.client.HowardApolloServerOptions;
 import com.howard.www.common.message.apollo.client.HowardMqttServerAttribute;
 
-@Configuration
+/**@Configuration**/
 public class SystemApolloServerConfig {
 
-	@Bean(name = "howardApolloServerCallback")
+	//@Bean(name = "howardApolloServerCallback")
 	public HowardApolloServerCallback initHowardApolloServerCallback() {
 		return new HowardApolloServerCallback();
 	}
 
-	@Bean(name = "howardMqttServerAttribute")
-	@Scope("prototype")
+	//@Bean(name = "howardMqttServerAttribute")
+	//@Scope("prototype")
 	public HowardMqttServerAttribute initHowardMqttServerAttribute() {
 		HowardMqttServerAttribute howardMqttServerAttribute = new HowardMqttServerAttribute();
 		howardMqttServerAttribute.setMqttServerHost("tcp://192.168.1.4:61613");
@@ -29,8 +29,8 @@ public class SystemApolloServerConfig {
 		return howardMqttServerAttribute;
 	}
 
-	@Bean(name = "howardApolloServerOptions")
-	@Scope("prototype")
+	//@Bean(name = "howardApolloServerOptions")
+	//@Scope("prototype")
 	public HowardApolloServerOptions initHowardApolloServerOptions() {
 		HowardApolloServerOptions howardApolloServerOptions = new HowardApolloServerOptions();
 		howardApolloServerOptions.evaluateCleanSession(false);
@@ -41,7 +41,7 @@ public class SystemApolloServerConfig {
 		return howardApolloServerOptions;
 	}
 
-	@Bean(name = "howardApolloServerClient")
+	//@Bean(name = "howardApolloServerClient")
 	public HowardApolloServerClient initHowardApolloServerClient(
 			@Qualifier("howardMqttServerAttribute") HowardMqttServerAttribute howardMqttServerAttribute,
 			@Qualifier("howardApolloServerCallback") HowardApolloServerCallback howardApolloServerCallback,
