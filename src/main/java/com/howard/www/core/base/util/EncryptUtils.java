@@ -443,7 +443,7 @@ public class EncryptUtils {
 		// toString()使用平台默认编码，也可以显式的指定如toString("GBK")
 		return out.toString();
 	}
-
+    /**
 	public static void main(String[] args) {
 		EncryptUtils encryptUtils = new EncryptUtils();
 		String source = "{ 'firstName': 'Brett', 'lastName':'McLaughlin', 'email': 'aaaa' }，{ 'firstName': 'Brett', 'lastName':'McLaughlin', 'email': 'aaaa' }";
@@ -490,4 +490,5 @@ public class EncryptUtils {
 		}
 		
 	}
+	**/
 }
