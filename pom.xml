@@ -56,6 +56,16 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+		<!-- add by mayijie at 2017.08.20  websocket-->
+		<!-- Spring Boot provides WebSockets auto-configuration for embedded Tomcat (8 and 7), Jetty 9 and Undertow. 
+		If you’re deploying a war file to a standalone container, 
+		Spring Boot assumes that the container will be responsible for the configuration of its WebSocket support.
+		Spring Framework provides rich WebSocket support that can be easily accessed via the spring-boot-starter-websocket module. 
+		-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
