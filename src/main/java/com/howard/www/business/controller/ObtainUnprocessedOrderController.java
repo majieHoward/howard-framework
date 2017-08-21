@@ -6,18 +6,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.howard.www.business.domain.BackInteractivenfoEntity;
 import com.howard.www.business.service.IBusinessUserService;
 import com.howard.www.business.service.IObtainUnprocessedOrderService;
 import com.howard.www.core.base.util.FrameworkStringUtils;
 import com.howard.www.core.base.web.controller.BaseController;
 import com.howard.www.core.data.transfer.dto.IDataTransferObject;
-
-import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 /**
@@ -29,8 +24,10 @@ import net.sf.json.JSONObject;
  * 
  * @Copyright: 2017 https://github.com/majieHoward Inc. All rights reserved.
  */
-@RestController
-@Scope("prototype")
+/**
+ * @RestController
+ *@Scope("prototype")
+**/
 public class ObtainUnprocessedOrderController extends BaseController {
 	protected final Logger log = LoggerFactory.getLogger(ObtainUnprocessedOrderController.class);
 	@Autowired
