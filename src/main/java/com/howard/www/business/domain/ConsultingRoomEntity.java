@@ -42,6 +42,10 @@ public class ConsultingRoomEntity implements Serializable{
     private String inputCode;
     //eg.171.217.95.14 (诊室对应的屏幕信息)
     private ScreenDeviceEntity screenDevice;
+    //eg.171.217.95.14(作为KEY)
+  	private String internetProtocol;
+  	//eg.351521004992889(作为KEY)
+  	private String screenDeviceIdentity;
     //是否可用'10A' '10X'
   	private String available;
 }
