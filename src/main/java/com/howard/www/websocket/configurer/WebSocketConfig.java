@@ -81,7 +81,5 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 		 *用于标识这些目的地的默认前缀是"/user/"
 		 */
 		registry.setUserDestinationPrefix("/screenDevice/");
-		
 	}
-
 }
