@@ -1,15 +1,13 @@
 package com.howard.www.business.controller;
 
-import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.RequestMapping;
-import com.howard.www.core.base.web.controller.BaseController;
-
+import org.springframework.stereotype.Controller;
 /**
  * @Controller @Scope("prototype")
  **/
-public class TemplateController extends BaseController {
+@Controller
+public class TemplateController {
 	protected final Logger log = LoggerFactory.getLogger(TemplateController.class);
 
 	/**
@@ -32,8 +30,4 @@ public class TemplateController extends BaseController {
 	 *            } catch (Exception e1) { // TODO Auto-generated catch block
 	 *            e1.printStackTrace(); } return "/helloHtml"; }
 	 **/
-	@RequestMapping("/index.howard")
-	public String portalIndex(Map<String, Object> map) {
-		return "/index";
-	}
 }

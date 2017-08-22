@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.howard.www.business.service.IExternalProvidedHisService;
 import com.howard.www.core.base.util.FrameworkStringUtils;
 import com.howard.www.core.data.transfer.dto.IDataTransferObject;
+
 import net.sf.json.JSONObject;
 /**
  * 
@@ -38,7 +41,6 @@ public class ExternalProvidedHisController {
 	public String doctorOnlineStatus(IDataTransferObject requiredParameter) throws Exception {
 		return FrameworkStringUtils.asString(JSONObject.fromObject(requiredParameter));
 	}
-	
 	/**
 	 * 
 	 * @Title: callThePatient   
@@ -51,6 +53,11 @@ public class ExternalProvidedHisController {
 	 */
 	@RequestMapping("/developing/his/transfer/hospital.callThePatient.interfaces")
 	public String callThePatient(IDataTransferObject requiredParameter) throws Exception {
+		obtainIExternalProvidedHisService().callAPatientToSeeADoctor(requiredParameter);
 		return FrameworkStringUtils.asString(JSONObject.fromObject(requiredParameter));
+	}
+	
+	private IExternalProvidedHisService obtainIExternalProvidedHisService() throws Exception{
+		return (IExternalProvidedHisService) cApplicationContext.getBean("externalProvidedHisService");
 	}
 }

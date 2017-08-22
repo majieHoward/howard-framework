@@ -26,7 +26,7 @@ import net.sf.json.JSONObject;
  */
 /**
  * @RestController
- *@Scope("prototype")
+ *
 **/
 public class ObtainUnprocessedOrderController extends BaseController {
 	protected final Logger log = LoggerFactory.getLogger(ObtainUnprocessedOrderController.class);

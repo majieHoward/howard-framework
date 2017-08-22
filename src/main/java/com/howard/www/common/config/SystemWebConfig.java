@@ -2,9 +2,12 @@ package com.howard.www.common.config;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.resource.GzipResourceResolver;
 import org.springframework.web.servlet.resource.VersionResourceResolver;
@@ -25,6 +28,7 @@ import com.howard.www.core.base.web.mvc.argument.IDataTransferObjectMethodArgume
  */
 @Configuration
 public class SystemWebConfig extends WebMvcConfigurationSupport {
+	protected final Logger log = LoggerFactory.getLogger(SystemWebConfig.class);
     /**
      * 
      * <p>Title: addResourceHandlers</p>   
@@ -61,5 +65,20 @@ public class SystemWebConfig extends WebMvcConfigurationSupport {
 		IDataTransferObjectMethodArgumentResolver dataTransferObjectMethodArgumentResolver = new IDataTransferObjectMethodArgumentResolver();
 		return dataTransferObjectMethodArgumentResolver;
 	}
+	/**
+	 * 
+	 * <p>Title: addViewControllers</p>   
+	 * <p>Description:add by mayijie at 2017.
+	 * 不重写WebMvcConfigurerAdapter中的public void addViewControllers(ViewControllerRegistry registry)</p>   
+	 * @param registry   
+	 * @see org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport#addViewControllers(org.springframework.web.servlet.config.annotation.ViewControllerRegistry)
+	 */
+	@Override
+	protected void addViewControllers(ViewControllerRegistry registry) {
+		log.info("Add page mapping url:/hospital/queue/operation/consultation/room.exhibition");
+		registry.addViewController("/hospital/queue/operation/consultation/room.exhibition").setViewName("consultationRoom");
+		super.addViewControllers(registry);
+	}
 
+	
 }
